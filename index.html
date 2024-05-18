@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Pricing Component with Toggle Master</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Our Pricing</h1>
+    <div class="header-content">
+      <p id="p1">Annually</p>
+      <input type="checkbox" id="check" checked onclick="annual(event)">
+      <label for="check" class="button"></label>
+      <p id="p2">Monthly</p>
+    </div>
+  </div>
+  <!-- Monthly plan -->
+  <div class="content">
+    <div class="box">
+      <p style="border: none;">Basic</p>
+      <h1 id="basic">&dollar;19.99</h1>
+      <p>500 GB Storage</p>
+      <p>2 Users Allowed</p>
+      <p>Send up to 3 GB</p>
+      <button>Learn More</button>
+    </div>
+    <div class="center center-box">
+      <p style="border: none;">Professional</p>
+      <h1 id="pro">&dollar;24.99</h1>
+      <p>1 TB Storage</p>
+      <p>5 Users Allowed</p>
+      <p>Send up to 10 GB</p>
+      <button>Learn More</button>
+    </div>
+    <div class="box">
+      <p style="border: none;">Master</p>
+      <h1 id="master">&dollar;39.99</h1>
+      <p>2 TB Storage</p>
+      <p>10 Users Allowed</p>
+      <p>Send up to 20 GB</p>
+      <button>Learn More</button>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">A.Arul</a>.
+  </div>
+
+</body>
+<script>
+  let input = document.querySelector('input')
+  let basic = document.getElementById('basic')
+  let pro = document.getElementById('pro')
+  let master = document.getElementById('master')
+  function annual(event) {
+    if (!input.checked) {
+      basic.textContent = '$199.99'
+      pro.textContent = '$249.99'
+      master.textContent = '$399.99'
+    }
+    else {
+      basic.textContent = '$19.99'
+      pro.textContent = '$24.99'
+      master.textContent = '$39.99'
+    }
+  }
+</script>
+
+</html>
